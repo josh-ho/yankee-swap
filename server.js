@@ -8,6 +8,9 @@ const io = new Server(server);
 const { InMemorySessionStore } = require("./server/sessionStore.js");
 const sessionStore = new InMemorySessionStore();
 
+let hasRandomDrawOccurred = false;
+let randomizedResult = []
+
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
@@ -60,6 +63,12 @@ io.on('connection', socket => {
 
 		// Update the host of new users
 		informAllUsers()
+
+		if(hasRandomDrawOccurred) {
+			socket.emit('show-final', {
+				result: randomizedResult	
+			})
+		}
 	});
 
 	socket.emit("session", {
@@ -97,9 +106,10 @@ io.on('connection', socket => {
 				index,
 			}
 		})
-		const randomizedArr = randomizeArray(arr)
+		randomizedResult = randomizeArray(arr)
+		hasRandomDrawOccurred = true
 		io.emit('randomized-users', {
-			result: randomizedArr	
+			result: randomizedResult	
 		})
 	})
 

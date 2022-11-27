@@ -32,22 +32,30 @@ showContent = id => {
 }
 
 initalizeCountdown = () => {
-	timer = setInterval(updateText, 1500)
+	const countdownElem = document.getElementById('countdown')
+	countdownElem.addEventListener('animationend', updateText)
+	countdownElem.className = 'animate-to-one';
 }
 
-updateText = () => {
-	if(countdownNum === 1) {
-		clearInterval(timer)
-		setTimeout(finalReveal, 500)
-	} else {
-		countdownNum = countdownNum - 1;
-		const countdownElem = document.getElementById('countdown')
-		countdownElem.className = ""
-		countdownElem.innerHTML = countdownNum
+updateText = evt => {
+	const countdownElem = document.getElementById('countdown')
+	const animationState = evt.target.dataset.animationstate
+	if(animationState === "hidden") {
 		setTimeout(() => {
-			let countdownClassName = `fade-in scale-down ${(countdownNum % 2 === 1) ? 'animate-to-second-colour' : 'animate-to-first-colour'}`
-			countdownElem.className = countdownClassName
-		}, 100)
+			countdownElem.className = "fade-out";
+		}, 1000)
+		evt.target.dataset.animationstate = "revealed"
+	} else if(animationState === "revealed") {
+		if(countdownNum === 1) {
+			finalReveal()
+		} else {
+			countdownNum = countdownNum - 1;
+			let countdownClassName = `${(countdownNum % 2 === 1) ? 'animate-to-two' : 'animate-to-one'}`
+			countdownElem.className = countdownClassName;
+			countdownElem.innerHTML = countdownNum;
+		}
+		
+		evt.target.dataset.animationstate = "hidden";
 	}
 }
 
@@ -107,7 +115,7 @@ socket.on('return-all-users', userData => {
 			const row = document.createElement('tr');
 			row.id = id
 			const usernameCell = document.createElement('td');
-			usernameCell.innerHTML = username
+			usernameCell.innerHTML = (typeof username === "undefined") ? "< blank >": username
 			const connectedCell = document.createElement('td');
 			connectedCell.innerHTML = connected ? "Connected" : "Disconnected"
 			connectedCell.className = connected ? "connected" : "disconnected"
@@ -177,6 +185,14 @@ socket.on('randomized-users', resultObj => {
 	// Start the Countdown
 	showContent('intersticial')
 	initalizeCountdown()
+})
+
+socket.on('show-final', resultObj => {
+	const { result } = resultObj
+	const { index } = result.find(obj => obj.id === localStorageSessionID)
+	document.getElementById('number').innerHTML = Number(index) + 1;
+
+	showContent('final')
 })
 
 if(startGame){

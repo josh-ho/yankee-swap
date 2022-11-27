@@ -128,6 +128,7 @@ form > div > button {
 #intersticial, #final, #removed {
 	font-size: 3.5em;
 	font-family: 'Waving at Christmas';
+	position: relative;
 }
 
 #intersticial p, #number {
@@ -136,6 +137,9 @@ form > div > button {
 	font-size: 10em;
 	margin: 0;
 	color: #4d5d55;
+	display: block;
+	opacity: 1;
+	transform: scale(1);
 }
 
 .hide {
@@ -154,16 +158,16 @@ form > div > button {
 	animation: fadeIn 2s;
 }
 
-.scale-down {
-	animation: scaleDown 0.5s;
+.fade-out {
+	animation: fadeOut 0.5s;
 }
 
-.animate-to-second-colour {
-	animation: colorOneToTwo 2s;
+.animate-to-two {
+	animation: countdownThreeToTwo 2s;
 }
 
-.animate-to-first-colour {
-	animation: colorTwoToOne 2s;
+.animate-to-one {
+	animation: countdownTwoToOne 2s;
 }
 
 .second-font {
@@ -195,32 +199,43 @@ form > div > button {
 	}
 }
 
-@keyframes scaleDown {
-	0% {
-		scale: 1.5;
+@keyframes fadeOut {
+	0% { 
+		opacity: 1; 
 	}
-
-	100% {
-		scale: 1;
+	100% { 
+		opacity: 0; 
 	}
 }
 
-@keyframes colorOneToTwo {
+@keyframes countdownThreeToTwo {
 	0% {
+		opacity: 0;
+		-webkit-transform: scale(1.5);
+		transform: scale(1.5);
 		color: #4d5d55;
 	}
 
 	100% {
+		opacity: 1;
+		-webkit-transform: scale(1.0);
+		transform: scale(1);
 		color: #de1f25;
 	}
 }
 
-@keyframes colorTwoToOne {
+@keyframes countdownTwoToOne {
 	0% {
+		opacity: 0;
+		-webkit-transform: scale(1.5);
+		transform: scale(1.5);
 		color: #de1f25;
 	}
 
 	100% {
+		opacity: 1;
+		-webkit-transform: scale(1.0);
+		transform: scale(1);
 		color: #4d5d55;
 	}
 }
