@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JJJH Yankee Swap</title>
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+	<link rel="manifest" href="./images/site.webmanifest">
+	<link rel="mask-icon" href="./images/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+  </head>
+  <body>
+	<div class="container">
+		<section id="content">
+			<h1><span class="second-color small-ls">JJJH</span> <span class="no-wrap second-font">Yankee Swap</span></h1>
+			<form id="form" action="">
+				<label for="name">
+					When everyone is ready, <br/>the host will begin the draw:
+				</label>
+				<div class="input-wrapper">
+					<input id="name" autocomplete="off" placeholder="Your name (1 name per device)"/>
+					<button>Submit</button>
+				</div>
+				<div id="waiting" class="hide">
+					Thank you<br/>We are waiting for everyone to show up and the host to start.
+				</div>
+			</form>
+		</section>
+
+		<section id="popup" class="hide">
+			<div id="intersticial" class="hide">
+				Randomizing the list in...
+				<p id="countdown">3</p>
+			</div>
+			<div id="final" class="hide">
+				Your random draw is:
+				<p id="number"></p>
+			</div>
+			<div id="removed" class="hide">
+				You have been removed from the Yankee Swap
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="./scripts/script.js"></script>
+  </body>
+</html>

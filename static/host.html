@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yankee Swap - Host</title>
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+  </head>
+  <body>
+	<div class="container">
+		<section id="content">
+			<section>
+				<h1>JJJH Current User List</h1>
+				<table id="userList"></table>
+			</section>
+			<section>
+				<form id="form" action="">
+					<label for="name">
+						Input the host name to play:
+					</label>
+					<div class="input-wrapper">
+						<input id="name" autocomplete="off" placeholder="host name"/>
+						<button>Submit</button>
+					</div>
+					<div id="waiting" class="hide">
+						Thank you<br/>We are waiting for everyone to show up and the host to start the Yankee Swap.
+					</div>
+				</form>
+			</section>
+			<section id="game-btns">
+				<button id="startYankeeSwap" class="full-btn">Start Yankee Swap</button>
+				<button id="reset" class="full-btn">Reset Full Game</button>
+			</section>
+		</section>
+		<section id="popup" class="hide">
+			<div id="intersticial" class="hide">
+				Randomizing the list in...
+				<p id="countdown">3</p>
+			</div>
+			<div id="final" class="hide">
+				Your random draw is:
+				<p id="number"></p>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="./scripts/script.js"></script>
+  </body>
+</html>

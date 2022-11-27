@@ -1,0 +1,195 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-family: Helvetica, Arial;
+}
+
+body {
+	background-image: url("../images/christmas-tree-santa-head-candy-cane-seamless-pattern-background-perfect-for-winter-holiday-fabric-giftwrap-scrapbook-greeting-cards-design-projects-free-vector.jpg");
+	background-position: center;
+	background-repeat: repeat;
+	background-size: contain;
+}
+
+.container {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#content, #popup {
+	border: 10px solid black;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 60px;
+	padding: 20px;
+	text-align: center;
+	max-width: 70%;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+h1 {
+	display: block;
+	text-align: center;
+	font-size: 5em;
+	margin: 20px;
+	text-align: center;
+	font-family: 'Waving at Christmas';
+	color: #de1f25;
+	line-height: 0.7;
+	font-weight: 700;
+}
+
+label {
+	display: block;
+	font-size: 3em;
+	font-family: 'Waving at Christmas';
+	margin: 50px auto 60px;
+	max-width: 60%;
+}
+
+form > p {
+	margin: 10px 0;
+	font-size: 0.75em;
+}
+
+input {
+	border: 0;
+	font-size: 2.5em;
+	font-family: 'Waving at Christmas';
+}
+
+form > div > button {
+	background: none;
+	border: 0;
+	border-left: 1px solid;
+	padding-left: 20px;
+	cursor: pointer;
+	font-size: 2em;
+	font-family: 'Waving at Christmas';
+	font-weight: bold;
+	color: #4d5d55;
+}
+
+.input-wrapper {
+	display: inline-block;
+	padding: 20px;
+	border: 5px solid;
+	border-radius: 60px;
+	background-color: white;
+	margin-bottom: 50px;
+}
+
+#waiting {
+	margin: 0  auto 50px;
+	max-width: 85%;
+	font-size: 2em;
+	font-family: 'Waving at Christmas';
+}
+
+.game-btns {
+	display: block;
+	width: 100%;
+}
+
+.full-btn {
+	display: block;
+	width: 100%;
+	border: 1px solid;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 10px 0;
+	font-size: 1.5em;
+}
+
+#startYankeeSwap {
+	background-color: green;
+}
+
+#reset {
+	background-color: red;
+}
+
+#intersticial, #final, #removed {
+	font-size: 3.5em;
+	font-family: 'Waving at Christmas';
+}
+
+#intersticial p, #number {
+	font-family: 'playful_christmas-personal_Rg';
+	font-weight: bold;
+	font-size: 10em;
+	margin: 0;
+	color: #4d5d55;
+}
+
+.hide {
+	display: none;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.fade-in {
+	animation: fadeIn 2s;
+}
+
+.scale-down {
+	animation: scaleDown 0.5s;
+}
+
+.second-font {
+	font-family: 'Waving at Christmas';
+}
+
+.second-color {
+	color: #4d5d55;
+}
+
+.small-ls {
+	letter-spacing: -5px;
+}
+
+@keyframes fadeIn {
+	0% { 
+		opacity: 0; 
+	}
+	100% { 
+		opacity: 1; 
+	}
+}
+
+@keyframes scaleDown {
+	0% {
+		scale: 1.5;
+	}
+
+	100% {
+		scale: 1;
+	}
+}
+
+@font-face {
+    font-family: 'Waving at Christmas';
+    src: url('../fonts/WavingatChristmas.woff2') format('woff2'),
+        url('../fonts/WavingatChristmas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'playful_christmas-personal_Rg';
+    src: url('../fonts/playful_christmas-personal_use-webfont.woff2') format('woff2'),
+         url('../fonts/playful_christmas-personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
