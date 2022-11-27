@@ -44,6 +44,14 @@ h1 {
 	color: #de1f25;
 	line-height: 0.7;
 	font-weight: 700;
+	position: relative;
+	max-width: 90%;
+	height: 110px;
+}
+
+h1 span {
+	opacity: 0;
+	display: block;
 }
 
 label {
@@ -51,7 +59,7 @@ label {
 	font-size: 3em;
 	font-family: 'Waving at Christmas';
 	margin: 50px auto 60px;
-	max-width: 60%;
+	max-width: 70%;
 }
 
 form > p {
@@ -101,7 +109,7 @@ form > div > button {
 .full-btn {
 	display: block;
 	width: 100%;
-	border: 1px solid;
+	border: 5px solid;
 	border-radius: 10px;
 	padding: 20px;
 	margin: 10px 0;
@@ -109,11 +117,12 @@ form > div > button {
 }
 
 #startYankeeSwap {
-	background-color: green;
+	background-color:#4d5d55;
+
 }
 
 #reset {
-	background-color: red;
+	background-color: #de1f25;
 }
 
 #intersticial, #final, #removed {
@@ -137,12 +146,24 @@ form > div > button {
 	white-space: nowrap;
 }
 
+.intro-animate {
+	animation: fadeIn 1s;
+}
+
 .fade-in {
 	animation: fadeIn 2s;
 }
 
 .scale-down {
 	animation: scaleDown 0.5s;
+}
+
+.animate-to-second-colour {
+	animation: colorOneToTwo 2s;
+}
+
+.animate-to-first-colour {
+	animation: colorTwoToOne 2s;
 }
 
 .second-font {
@@ -155,6 +176,14 @@ form > div > button {
 
 .small-ls {
 	letter-spacing: -5px;
+}
+
+.intro-hide {
+	opacity: 0;
+}
+
+.reveal {
+	opacity: 1;
 }
 
 @keyframes fadeIn {
@@ -173,6 +202,26 @@ form > div > button {
 
 	100% {
 		scale: 1;
+	}
+}
+
+@keyframes colorOneToTwo {
+	0% {
+		color: #4d5d55;
+	}
+
+	100% {
+		color: #de1f25;
+	}
+}
+
+@keyframes colorTwoToOne {
+	0% {
+		color: #de1f25;
+	}
+
+	100% {
+		color: #4d5d55;
 	}
 }
 

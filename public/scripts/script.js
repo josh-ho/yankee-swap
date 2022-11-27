@@ -45,7 +45,8 @@ updateText = () => {
 		countdownElem.className = ""
 		countdownElem.innerHTML = countdownNum
 		setTimeout(() => {
-			countdownElem.className = "fade-in scale-down"
+			let countdownClassName = `fade-in scale-down ${(countdownNum % 2 === 1) ? 'animate-to-second-colour' : 'animate-to-first-colour'}`
+			countdownElem.className = countdownClassName
 		}, 100)
 	}
 }
@@ -69,7 +70,7 @@ socket.on("session", ({ sessionID }) => {
 			id: localStorageSessionID,
 			name: localStorageUsername
 		});
-		document.getElementById("waiting").className = "fade-in"
+		
 	}
 });
 
@@ -134,6 +135,26 @@ socket.on('end-client-session', id => {
 		socket.disconnect()
 		showContent('popup')
 	}
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+	const spanElemArr = document.querySelectorAll('h1 span')
+	spanElemArr.forEach((elem, index) => {
+		setTimeout(() => {
+			elem.className += " intro-animate reveal"
+		}, 300 * (index + 1))
+	});
+
+	setTimeout(() => {
+		document.querySelectorAll('form label')[0].className = "fade-in reveal"
+	}, 1000)
+
+	setTimeout(() => {
+		document.querySelectorAll('form div')[0].className = "input-wrapper fade-in reveal"
+		if(localStorageUsername){
+			document.getElementById("waiting").className = "fade-in"
+		}
+	}, 1500)
 })
 
 form.addEventListener('submit', function(e) {
