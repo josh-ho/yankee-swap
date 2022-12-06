@@ -40,7 +40,7 @@ h1 {
 	font-size: 5em;
 	margin: 20px;
 	text-align: center;
-	font-family: 'Waving at Christmas';
+	font-family: 'merry_christmas_starregular';
 	color: #de1f25;
 	line-height: 0.7;
 	font-weight: 700;
@@ -56,8 +56,8 @@ h1 span {
 
 label {
 	display: block;
-	font-size: 3em;
-	font-family: 'Waving at Christmas';
+	font-size: 30px;
+	font-family: 'jam_grotesqueregular';
 	margin: 50px auto 60px;
 	max-width: 70%;
 }
@@ -70,7 +70,8 @@ form > p {
 input {
 	border: 0;
 	font-size: 2.5em;
-	font-family: 'Waving at Christmas';
+	font-family: 'jam_grotesqueregular';
+	vertical-align: middle;
 }
 
 form > div > button {
@@ -83,6 +84,7 @@ form > div > button {
 	font-family: 'Waving at Christmas';
 	font-weight: bold;
 	color: #4d5d55;
+	vertical-align: middle;
 }
 
 .input-wrapper {
@@ -95,10 +97,10 @@ form > div > button {
 }
 
 #waiting {
-	margin: 0  auto 50px;
+	margin: 0 auto 50px;
 	max-width: 85%;
-	font-size: 2em;
-	font-family: 'Waving at Christmas';
+	font-size: 25px;
+	font-family: 'jam_grotesqueregular';
 }
 
 .game-btns {
@@ -255,5 +257,20 @@ form > div > button {
          url('../fonts/playful_christmas-personal_use-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'jam_grotesqueregular';
+    src: url('../fonts/fontspring-demo-jamgrotesque-regular-webfont.woff2') format('woff2'),
+         url('../fonts/fontspring-demo-jamgrotesque-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merry_christmas_starregular';
+    src: url('../fonts/merrychristmasstar-webfont.woff2') format('woff2'),
+         url('../fonts/merrychristmasstar-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
